@@ -1,2 +1,2 @@
-# slider
-# slideshow_js
+## Simple Slideshow JS
+simple automatic slider with no other functionality
