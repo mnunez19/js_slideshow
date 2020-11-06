@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" />
+  </head>
+<body>
+
+<style>
+
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  main{
+    height: 100vh;
+    text-align: center;
+  }
+  .container{
+    width: 80%;
+  }
+  img{
+    width: 100%;
+  }
+
+</style>
+<main>
+  <h1>Slideshow</h1>
+  <div class="container" >
+    <img src="img/image0.jpg" alt="">
+  </div>
+</main>
+
+<script>
+  let images = [ 'img/image0','img/image1','img/image2','img/image3' ],
+      speed = 3000,
+      i = 0; 
+
+  function sliderImg(){
+
+    if( i < images.length - 1){
+      i++;
+      document.querySelector(`img`).setAttribute(`src`, `img/image${i}.jpg`)
+    } else if( i => images.length){
+      i = 0;
+      document.querySelector(`img`).setAttribute(`src`, `img/image${i}.jpg`) 
+    }
+    setTimeout('sliderImg()', speed);
+  }
+  window.onload = setTimeout('sliderImg()', speed)
+</script>
+
+</body>
+</html>
